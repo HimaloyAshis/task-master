@@ -9,7 +9,13 @@ const tasksSlice = createSlice({
     initialState,
     reducers:  {
         addTask : (state, {payload}) =>{
-            state.tasks.push(payload)
+
+            if(state.tasks.length === 0){
+                
+                state.tasks.push({id: 1 ,...payload})
+            }else{
+                
+            }
         }
     }
 })
