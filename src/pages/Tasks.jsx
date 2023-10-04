@@ -47,33 +47,33 @@ const Tasks = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Up Next</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-               {pendingTask.length}
+               {pendingTask?.length}
               </p>
             </div>
             <div className="space-y-3">
-              {pendingTask.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
+              {pendingTask?.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
             </div>
           </div>
           <div className="relative h-[800px] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>In Progress</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {runningTask.length}
+                {runningTask?.length}
               </p>
             </div>
             <div className="space-y-3">
-            {runningTask.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
+            {runningTask?.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
             </div>
           </div>
           <div className="relative h-[800px] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Up Next</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {doneTask.length}
+                {doneTask?.length}
               </p>
             </div>
             <div className="space-y-3">
-            {doneTask.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
+            {doneTask?.map(item=> <TaskCard key={item.id} task={item} ></TaskCard> )}
             </div>
           </div>
         </div>
