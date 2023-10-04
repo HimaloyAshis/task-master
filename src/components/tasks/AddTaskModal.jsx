@@ -4,10 +4,15 @@ import { useForm } from 'react-hook-form';
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
 
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, reset } = useForm()
 
     const onSubmit = (data) => {
         console.log(data)
+    }
+
+    const onCancel =() =>{
+        reset()
+        setIsOpen(false)
     }
 
     return (
@@ -46,17 +51,15 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
                     <label htmlFor="title mb-3">Priority</label>
                     <select className='w-full rounded-md' id='priority' {...register('priority')}
                     >
-                        <option value={'Himaloy Ashis'} >Himaloy Ashis</option>
-                        <option value={'Hriday '} >Hriday </option>
-                        <option value={'Niladri'} >Niladri</option>
-
+                        <option defaultValue value={'High'} >High</option>
+                        <option value={'medium'} >Medium </option>
+                        <option value={'low'} >Low</option>
                     </select>
                 </div>
-                <div className='flex flex-col mb-5'>
-                    <label htmlFor="title mb-3">Title</label>
-                    <input className='w-full rounded-md' type="text" id='title' {...register('name')} />
+                <div className=' flex justify-end gap-3'>
+                    <button onClick={()=> onCancel()} className='btn btn-primary' type='button'>Cancel </button>
+                    <button className='btn btn-danger' type='submit'>Submit </button>
                 </div>
-                <button type='submit'>Submit </button>
 
             </form>
         </Modal>
