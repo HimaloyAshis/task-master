@@ -29,7 +29,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
                 </div>
                 <div className='flex flex-col mb-5'>
                     <label htmlFor="description mb-3">Description</label>
-                    <input className='w-full rounded-md' type="text" id='Description' {...register('name')} />
+                    <input className='w-full rounded-md' type="text" id='Description' {...register('description')} />
                 </div>
                 <div className='flex flex-col mb-5'>
                     <label htmlFor="title mb-3">Dead line</label>

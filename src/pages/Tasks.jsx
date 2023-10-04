@@ -5,10 +5,14 @@ import MyModal from '../components/ui/Modal';
 import { useState } from 'react';
 import Modal from '../components/ui/Modal';
 import AddTaskModal from '../components/tasks/AddTaskModal';
+import { useSelector } from 'react-redux';
 
 const Tasks = () => {
 
   const [isOpen, setIsOpen]  = useState(false)
+  const {tasks} = useSelector((state)=>state.taskSlice)
+
+  console.log(tasks)
 
   return (
     <div className="h-screen grid grid-cols-12">
