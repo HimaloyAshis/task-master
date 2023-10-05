@@ -12,7 +12,9 @@ const initialState = {
             assignedTo: 'Himaloy Ashis',
             priority: 'high',
           }
-    ]
+    ],
+
+    userTasks: []
 }
 
 const tasksSlice = createSlice({
@@ -39,6 +41,9 @@ const tasksSlice = createSlice({
             const updated = state.tasks.find(item => item.id == payload.id)
             updated.status= payload.status
 
+        },
+        userTasks: (state, {payload})=>{
+            state.userTasks = state.tasks.filter((item)=> item.assignedTo ==payload )
         }
     }
 })
