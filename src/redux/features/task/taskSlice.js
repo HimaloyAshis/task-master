@@ -14,7 +14,7 @@ const initialState = {
           }
     ],
 
-    userTasks: []
+    userSpecificTasks: []
 }
 
 const tasksSlice = createSlice({
@@ -43,7 +43,7 @@ const tasksSlice = createSlice({
 
         },
         userTasks: (state, {payload})=>{
-            state.userTasks = state.tasks.filter((item)=> item.assignedTo ==payload )
+            state.userSpecificTasks = state.tasks.filter((item)=> item.assignedTo ==payload )
         }
     }
 })
