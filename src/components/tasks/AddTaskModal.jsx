@@ -25,7 +25,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
             <form onSubmit={handleSubmit(onSubmit)} >
                 <div className='flex flex-col mb-5'>
                     <label htmlFor="title mb-3">Title</label>
-                    <input className='w-full rounded-md' type="text" id='title' {...register('name')} />
+                    <input className='w-full rounded-md' type="text" id='title' {...register('title')} />
                 </div>
                 <div className='flex flex-col mb-5'>
                     <label htmlFor="description mb-3">Description</label>
@@ -56,7 +56,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
                     <label htmlFor="title mb-3">Priority</label>
                     <select className='w-full rounded-md' id='priority' {...register('priority')}
                     >
-                        <option defaultValue value={'High'} >High</option>
+                        <option defaultValue value={'high'} >High</option>
                         <option value={'medium'} >Medium </option>
                         <option value={'low'} >Low</option>
                     </select>
