@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     name: '',
@@ -7,6 +7,8 @@ const initialState = {
     isError:true,
     error:''
 }
+
+const createUser = createAsyncThunk('createSlice/createUser', async()=>{})
 
 
 const userSlice = createSlice({
