@@ -38,12 +38,12 @@ const userSlice = createSlice({
             state.error = ''
 
         })
-        addCase(createUser.rejected, (state)=>{
+        addCase(createUser.rejected, (state, action)=>{
             state.isLoading = false
             state.isError = true
             state.email = '';
             state.name = ''
-            state.error = error.message
+            state.error = action.error.message
 
         })
     }
