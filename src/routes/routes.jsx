@@ -4,6 +4,7 @@ import Tasks from '../pages/Tasks';
 import Chat from '../pages/Chat';
 import Settings from '../pages/Settings';
 import Profile from '../pages/Profile';
+import SignUp from '../pages/Authentication/Signup/SignUp';
 const routes = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
         path: '/profile',
         element: <Profile />,
       },
+      {
+        path:'/signUp',
+        element: <SignUp></SignUp>
+      }
     ],
   },
 ]);
