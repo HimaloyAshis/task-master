@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
 
-    const { register, handleSubmit} = useForm()
+    const { register, handleSubmit } = useForm()
 
-    const onSubmit =(dada)=>{
+    const onSubmit = (dada) => {
         console.log(dada)
 
     }
@@ -13,14 +13,22 @@ const SignUp = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label>First Name</label>
-                <input {...register("firstName")} />
-                <label>Gender Selection</label>
-                <select {...register("gender")}>
-                    <option value="female">female</option>
-                    <option value="male">male</option>
-                    <option value="other">other</option>
-                </select>
+                <div>
+                    <label>Name</label>
+                    <input {...register("name")} />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input {...register("email")} />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input {...register("password")} />
+                </div>
+                <div>
+                    <label>Confirm Password</label>
+                    <input {...register("confirm")} />
+                </div>
                 <input type="submit" />
             </form>
         </div>
